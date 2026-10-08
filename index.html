@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nina Kosec</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        /* Header */
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #ff4d6d;
+            object-fit: cover;
+            object-position: center 20%;
+            margin-bottom: 12px;
+            box-shadow: 0 0 25px rgba(255, 77, 109, 0.4);
+        }
+
+        .name {
+            font-size: 26px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        /* ===== HERO CARD (OnlyFans) ===== */
+        .hero-link {
+            display: block;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .hero-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.7);
+            transition: transform 0.25s ease;
+        }
+
+        .hero-link:hover .hero-card {
+            transform: translateY(-4px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 580px;
+            object-fit: cover;
+            object-position: center 28%;
+            display: block;
+        }
+
+        .badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(239, 68, 68, 0.95);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            backdrop-filter: blur(6px);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 50px 20px 22px;
+            background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, transparent 100%);
+            text-align: left;
+        }
+
+        .hero-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: #ffb3c1;
+            margin-bottom: 16px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: linear-gradient(90deg, #ff4d6d, #e11d48);
+            color: white;
+            padding: 12px 22px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            box-shadow: 0 6px 20px rgba(225, 29, 72, 0.5);
+        }
+
+        /* Bio */
+        .bio {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 16px;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #f0f0f0;
+        }
+
+        /* ===== TWITTER CARD (escote) ===== */
+        .twitter-link {
+            display: block;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .twitter-card {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 12px 30px -8px rgba(0,0,0,0.6);
+            transition: transform 0.25s ease;
+        }
+
+        .twitter-link:hover .twitter-card {
+            transform: translateY(-3px);
+        }
+
+        .escote-img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            object-position: center 15%;
+            display: block;
+        }
+
+        .twitter-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 16px 18px;
+            background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%);
+            text-align: left;
+        }
+
+        /* Botón Twitter de otro color (oscuro elegante) */
+        .twitter-cta {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            padding: 11px 20px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+        }
+
+        .footer {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        @media (max-width: 400px) {
+            .hero-image {
+                height: 540px;
+            }
+            .escote-img {
+                height: 410px;
+            }
+            .avatar {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <img src="avatar.jpg" alt="Nina Kosec" class="avatar">
+            <h1 class="name">Nina Kosec</h1>
+        </div>
+
+        <!-- HERO → OnlyFans -->
+        <a href="https://onlyfans.com/nina.kosec" target="_blank" class="hero-link">
+            <div class="hero-card">
+                <img src="ropa.jpg" alt="Nina Kosec" class="hero-image">
+                <div class="badge">EN VIVO</div>
+                
+                <div class="hero-overlay">
+                    <div class="hero-title">Aquí sin filtros</div>
+                    <div class="hero-subtitle">Te sentirás mejor... ¿te animas?</div>
+                    <div class="hero-cta">Dicen que tus frutas favoritas son 🍒🍑👇🏻</div>
+                </div>
+            </div>
+        </a>
+
+        <!-- Bio -->
+        <div class="bio">
+            Si llegaste hasta aquí es porque quieres ver más de mí, así que no seas tímido
+        </div>
+
+        <!-- ESCOTE → Twitter / X -->
+        <a href="https://x.com/ninakoseczcp" target="_blank" class="twitter-link">
+            <div class="twitter-card">
+                <img src="escote.jpg" alt="Nina Kosec" class="escote-img">
+                
+                <div class="twitter-overlay">
+                    <div class="twitter-cta">Twitter / X</div>
+                </div>
+            </div>
+        </a>
+
+        <div class="footer">
+            © 2026 Nina Kosec
+        </div>
+    </div>
+</body>
+</html>
